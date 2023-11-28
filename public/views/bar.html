@@ -1,0 +1,10 @@
+{{ define "bar" }}
+<div hx-get="/job/progress"
+  hx-trigger={{ .Trigger }}
+  hx-target="this"
+  hx-swap="innerHTML">
+  <div class="progress" role="progressbar">
+    <div id="pb" class="progress-bar" style="width:{{ .Width }}%"></div>
+  </div>
+</div>
+{{ end }}

@@ -1,0 +1,11 @@
+{{ define "progress" }}
+<div hx-trigger="done" hx-get="/job" hx-swap="outerHTML" hx-target="this">
+  <h3 role="status" id="pblabel" tabindex="-1" autofocus>{{ .Status }}</h3>
+
+  {{ template "bar" .Bar }}
+
+  <button id="restart-btn" class="btn" hx-post="/start" classes="add show:600ms">
+    Restart Job
+  </button>
+</div>
+{{ end }}
